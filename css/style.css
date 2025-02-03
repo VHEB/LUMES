@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --base1: #291e46;
+    --base2: #ffc438;
+    --base3: #fe903d;
+    --base4: #3fcec2;
+    --font-color: #252525;
+    --background-color: #fdfdfd;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h4: 1.25rem;
+    --font-size-h5: 1rem;
+    --font-size-h6: 0.875rem;
+    --font-size-p: 1rem;
+    --font-size-small: 0.875rem;
+}
+
+body{
+    font-family: 'Akira Expanded', sans-serif;
+    color: var(--font-color);
+    background-color: var(--background-color);
+}
+
+h1{
+    font-size: var(--font-size-h1);
+    color: var(--base1);
+}
