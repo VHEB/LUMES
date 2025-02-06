@@ -1,15 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Carregar o Header
-    fetch("/pages/header.html")  // Agora apontando para a pasta correta
+    fetch("/pages/header.html")  // Caminho correto baseado na estrutura
         .then(response => response.text())
         .then(data => {
-            document.querySelector("header").innerHTML = data;
+            let header = document.querySelector("header");
+            if (header) {
+                header.innerHTML = data;
+            } else {
+                console.error("Elemento <header> não encontrado!");
+            }
         });
 
     // Carregar o Footer
-    fetch("/pages/footer.html")  // Agora apontando para a pasta correta
+    fetch("/pages/footer.html")  // Caminho correto baseado na estrutura
         .then(response => response.text())
         .then(data => {
-            document.querySelector("footer").innerHTML = data;
+            let footer = document.querySelector("footer");
+            if (footer) {
+                footer.innerHTML = data;
+            } else {
+                console.error("Elemento <footer> não encontrado!");
+            }
         });
 });
