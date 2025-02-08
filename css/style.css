@@ -91,23 +91,114 @@ header {
 
 /* footer */
 .main_footer {
-    background-color: var(--base1); /* Mesmo fundo do menu */
+    background-color: var(--base1);
     color: white;
-    text-align: center;
-    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
     position: fixed;
     bottom: 0;
-    width: 100%;
     z-index: 1000;
 }
 
 .footer_text {
     text-align: center;
+    font-size: 0.9em;
+    color: white;
     width: 100%;
     position: absolute;
-    bottom: 10px;
-    left: 0;
+    bottom: 0;
 }
+
+.footer_social {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer_social h3 {
+    font-size: 1.2em;
+    color: var(--base2);
+    margin-bottom: 8px;
+}
+
+
+.footer_center {
+    text-align: center;
+    max-width: 38rem;
+    margin-bottom: 2rem;
+}
+
+.footer_center img {
+    width: 13rem;
+    margin-bottom: 10px;
+}
+
+
+/* Links do Menu (Direita) */
+.footer_menu {
+    text-align: right;
+}
+
+.footer_menu h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--base2);
+}
+
+.footer_menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_menu ul li {
+    margin-bottom: 5px;
+}
+
+.footer_menu ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer_menu ul li a:hover {
+    color: var(--base4);
+}
+
+
+
+/* Estilos do primeiro texto */
+.footer_slogan {
+    font-size: 1.3em;
+    font-style: italic;
+    color: var(--base2);
+    word-wrap: break-word;
+    line-height: 1.3;
+}
+
+/* Estilos do segundo texto */
+.footer_mission {
+    font-size: 1.2em;
+    font-style: italic;
+    color: white;
+    word-wrap: break-word;
+    line-height: 1.3;
+    margin-top: 8px;
+}
+
+
+.footer_logo img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.footer_logo p {
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--base2);
+}
+
 
 
 /* RESPONSIVO */
@@ -139,5 +230,25 @@ header {
 
     .menu-mobile {
         display: block;
+    }
+
+    .main_footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btn_social {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .footer_center {
+        max-width: 350px;
+    }
+
+    .footer_menu {
+        text-align: center;
+        margin-top: 20px;
     }
 }
