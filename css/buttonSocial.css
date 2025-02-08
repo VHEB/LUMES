@@ -1,9 +1,10 @@
-.btn_social { 
+@import url('./style.css');
 
-	width:100%; 
-	float:left; 
+.btn_social { 
 	display:flex; 
-	margin:auto; 
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 20px;
 }
 
 .btn_social ul  { 
@@ -17,7 +18,7 @@
 .btn_social ul li  { 
 
 	position:relative; 
-	background:#555555; 
+	background: var(--base3); 
 	list-style:none; 
 	float:left; 
 	margin:5px; 
@@ -49,26 +50,14 @@
 	height:100%; 
 	top:90%; 
 	left:0; 
-	background:#2fcacf; 
+	background:var(--base4); 
 	z-index:-1; 
 	transform: scale(1); 
 	transition:.4s; 
 }
 
 .btn_social ul li:hover::before { transition:0.4s; top:0%; }
-.btn_social ul li a:hover       { color:#555555; }
-/*App Social*/
-
-/*FOOTER*/
-.main_footer          { background-color:#353535; color:#fff; font-size:0.875em; }
-.main_footer .content { padding:3em 0em; }
-
-.main_footer_copy       { background-color:#262626; width:100%; float:left; text-align:center; padding:1.5em 0em; }
-.main_footer_copy p     { font-family:'open_sanslight'; font-size:1em; color:#e1e0e0; height:20px; }
-.main_footer_copy .m-b-footer   { margin-bottom:0.5em; }
-.main_footer_copy .by   { font-size:0.96em; }
-.main_footer_copy .by i { font-size:0.96em; margin-right:3px; color:#e82626; }
-
+.btn_social ul li a:hover       { color:var(--base1); }
 
 /*Começa o Responsivo*/
 

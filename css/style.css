@@ -85,6 +85,31 @@ header {
     cursor: pointer;
 }
 
+
+
+
+
+/* footer */
+.main_footer {
+    background-color: var(--base1); /* Mesmo fundo do menu */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.footer_text {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
     .menu {
