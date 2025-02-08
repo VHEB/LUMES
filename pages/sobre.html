@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre - LUMES</title>
     <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/carrossel.css">
     <link rel="stylesheet" type="text/css" href="../css/buttonSocial.css">
     <link rel="stylesheet" type="text/css" href="../css/fonts-icones.css">
     <link rel="icon" href="../resources/ico/LOGO-LUMES.ico" type="image/x-icon">
@@ -81,8 +82,19 @@
                 <p>Os integrantes devem participar ativamente das reuniões, contribuindo com ideias e assumindo responsabilidades...</p>
             </article>
         </section>
+
+        <section class="container-text">
+            <h2>Conheça Nossa Equipe</h2>
+            <div class="carousel">
+                <button id="prevBtn">&#10094;</button> <!-- Botão para voltar -->
+                <div class="carousel-container"></div> <!-- Aqui os cards serão inseridos pelo JS -->
+                <button id="nextBtn">&#10095;</button> <!-- Botão para avançar -->
+            </div>
+        </section>
     </main>
 
+
+    
 
     <footer class="main_footer">
         <div class="container">
@@ -91,7 +103,7 @@
                 <nav class="btn_social">
                     <ul>
                         <li><a href="#" target="_blank" title="Google"><i class="icon icon-google"></i></a></li>
-                        <li><a href="#" target="_blank" title="Instagram"><i class="icon icon-instagram"></i></a></li>
+                        <li><a href="https://www.instagram.com/lumesfacens?igsh=MWt3ZjljaGVqeTQ1aQ%3D%3D" target="_blank" title="Instagram"><i class="icon icon-instagram"></i></a></li>
                         <li><a href="#" target="_blank" title="LinkedIn"><i class="icon icon-linkedin"></i></a></li>
                     </ul>
                 </nav>
@@ -115,5 +127,6 @@
     </footer>
     <script src="../javascript/script.js"></script>
     <script src="../javascript/menu.js"></script>
+    <script src="../javascript/carrossel.js"></script>
 </body>
 </html>
