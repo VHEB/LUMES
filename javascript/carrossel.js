@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
             nome: "Gabriela Gonçalves",
             cargo: "Líder",
             curso: "Arquitetura e Urbanismo",
-            foto: "images/ana.jpg",
+            foto: "../resources/img/equipe/UserF.png",
             linkedin: "#www.linkedin.com/in/gabriela-gonçalves-030683212 ",
             instagram: "https://www.instagram.com/elagabi.gabriela?igsh=YXJwdDl2bXFuaHFy"
         },
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             nome: "Rafaela Jacção Alves",
             cargo: "Tesouraria",
             curso: "Arquitetura e Urbanismo",
-            foto: "images/fernando.jpg",
+            foto: "../resources/img/equipe/UserF.png",
             instagram: "https://www.instagram.com/rafa.jaccao?igsh=MXBjc2g3MW9vaWJyZA=="
         },
         {
@@ -47,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
             linkedin: "https://www.linkedin.com/in/thais-lopes-536510189?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
             instagram: "https://www.instagram.com/thaisp.ls?igsh=ZGpoaXluOGc5ampl&utm_source=qr"
         }
+        
     ];
 
     const container = document.querySelector(".carousel-container");
-    let index = 0;
 
     // Criar os cartões dinamicamente
     integrantes.forEach(integrante => {
@@ -71,24 +71,34 @@ document.addEventListener("DOMContentLoaded", function () {
         container.appendChild(card);
     });
 
-    const totalCards = integrantes.length;
-    const cardWidth = document.querySelector(".card").offsetWidth + 20; // Pegamos a largura de um card + margem
+    const cards = document.querySelectorAll(".card");
+    const cardWidth = cards[0].offsetWidth + 20; // Pegamos a largura de um card + margem
+    let index = 0; // Começa no primeiro cartão
+
+    function updateCarousel() {
+        container.style.transition = "transform 0.5s ease-in-out";
+        container.style.transform = `translateX(-${index * cardWidth}px)`;
+
+        // Desativa o botão de voltar no primeiro item
+        document.getElementById("prevBtn").disabled = index === 0;
+        // Desativa o botão de avançar no último item
+        document.getElementById("nextBtn").disabled = index === integrantes.length - 1;
+    }
 
     document.getElementById("prevBtn").addEventListener("click", () => {
         if (index > 0) {
             index--;
-        } else {
-            index = totalCards - 1; // Volta para o último cartão quando chega ao início
+            updateCarousel();
         }
-        container.style.transform = `translateX(-${index * cardWidth}px)`;
     });
 
     document.getElementById("nextBtn").addEventListener("click", () => {
-        if (index < totalCards - 1) {
+        if (index < integrantes.length - 1) {
             index++;
-        } else {
-            index = 0; // Volta para o primeiro cartão quando chega ao final
+            updateCarousel();
         }
-        container.style.transform = `translateX(-${index * cardWidth}px)`;
     });
+
+    // Atualiza a posição inicial
+    updateCarousel();
 });
