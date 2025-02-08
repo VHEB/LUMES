@@ -14,6 +14,13 @@
     --font-color: #252525;
     --background-color: #fdfdfd;
     --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h4: 1.2rem;
+    --font-size-h5: 1rem;
+    --font-size-h6: 0.8rem;
+    --font-size-p: 1rem;
+    --font-size-small: 0.8rem;
 }
 
 /* BODY */
@@ -23,6 +30,33 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Ajustes de elementos globais */
+h1 {
+    font-size: var(--font-size-h1);
+    color: var(--base1);
+    margin: 0.5rem 0;
+}
+h2 {
+    font-size: var(--font-size-h2);
+    color: var(--base1);
+    margin: 0.5rem 0;
+}
+h3 {
+    font-size: var(--font-size-h3);
+    color: var(--base3);
+    margin: 0.5rem 0;
+}
+li {
+    list-style: none;
+}
+.icon_list {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    display: inline-block;
+    vertical-align: middle;
+}
 /* HEADER FIXO */
 header {
     position: fixed;
@@ -85,9 +119,35 @@ header {
     cursor: pointer;
 }
 
+/* MAIN -- Conteúdo principal das paginas*/
+main {
+    margin: 80px auto; 
+    padding: 20px;
+    max-width: 1200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: --var(background-color);
+}
 
+#apresentacao{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 24px;
+}
+.container-text{
+    margin: 16px;
+    text-align: left;
+}
+article{
+    margin: 16px;
+    text-align: left;
+}
 
-
+.container-text li {
+    margin: 0.8rem;
+}
 
 /* footer */
 .main_footer {
@@ -98,7 +158,7 @@ header {
     align-items: center;
     padding: 20px;
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;
     z-index: 1000;
 }
@@ -135,7 +195,6 @@ header {
     margin-bottom: 10px;
 }
 
-
 /* Links do Menu (Direita) */
 .footer_menu {
     text-align: right;
@@ -166,8 +225,6 @@ header {
     color: var(--base4);
 }
 
-
-
 /* Estilos do primeiro texto */
 .footer_slogan {
     font-size: 1.3em;
@@ -187,7 +244,6 @@ header {
     margin-top: 8px;
 }
 
-
 .footer_logo img {
     width: 100px;
     margin-bottom: 10px;
@@ -198,8 +254,6 @@ header {
     font-style: italic;
     color: var(--base2);
 }
-
-
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
