@@ -149,6 +149,50 @@ article{
     margin: 0.8rem;
 }
 
+/* Formulários */
+.contact-container {
+    display: flex;
+    justify-content: space-between; /* Mantém o formulário à esquerda e a imagem à direita */
+    align-items: center;
+    flex-wrap: wrap; /* Permite ajuste para telas menores */
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Mantém os elementos alinhados à esquerda */
+    flex: 1; /* Ocupa o espaço necessário */
+}
+
+#contactForm input,
+#contactForm textarea,
+#contactForm button {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--base3);
+    border-radius: 5px;
+}
+
+#contactForm button {
+    background-color: var(--base3);
+    color: var(--background-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contactForm button:hover {
+    background-color: var(--base4);
+}
+
+.contact_img {
+    width: 100%;
+    max-width: 500px;
+    flex: 1; /* Ocupa o espaço necessário */
+}
+
+
 /* footer */
 .main_footer {
     background-color: var(--base1);

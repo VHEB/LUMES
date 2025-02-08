@@ -23,9 +23,42 @@
                 </ul>
                 <div class="menu-mobile">&#9776;</div>
             </nav>
-        </div>
-        
+        </div> 
     </header>
+    <main>
+        <h1>Contato</h1>
+        <p>Entre em contato conosco para tirar dúvidas, enviar sugestões ou solicitar informações sobre nossos projetos.</p>
+        <br>
+        <h2>Formulário de Contato</h2>
+    
+        <div class="contact-container">
+            <form id="contactForm">
+                <input type="text" id="name" required placeholder="Digite seu nome completo">
+                <input type="tel" id="phone" placeholder="Número de telefone com DDD">
+                <input type="text" id="text" placeholder="Qual curso você faz?">
+                <input type="email" id="email" required placeholder="Digite seu email">
+                <textarea id="message" required placeholder="Digite sua mensagem"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+    
+            <img src="../resources/img/contact.png" alt="Imagem de Formulário de contato" class="contact_img">
+        </div>
+    </main>
+    
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita recarregar a página
+    
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+    
+            const mailtoLink = `mailto:vitorhugobarbosa00@gmail.com?subject=Contato de ${name}&body=Nome: ${name}%0D%0AEmail: ${email}%0D%0AMensagem:%0D%0A${message}`;
+    
+            window.location.href = mailtoLink;
+        });
+    </script>
+    
 
     <footer class="main_footer">
         <div class="container">
