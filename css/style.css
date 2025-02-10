@@ -46,9 +46,16 @@ h3 {
     color: var(--base3);
     margin: 0.5rem 0;
 }
+p {
+    font-size: var(--font-size-p);
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    text-align: justify;
+}
 li {
     list-style: none;
 }
+
 .icon_list {
     width: 20px;
     height: 20px;
@@ -149,6 +156,40 @@ article{
     margin: 0.8rem;
 }
 
+.img_apresentacao{  
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botões secundários */
+.btn_second {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--base3);
+    border-radius: 5px;
+}
+
+.btn_second {
+    background-color: var(--base3);
+    color: var(--background-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn_second:hover {
+    background-color: var(--base4);
+}
+
+.btn_second a {
+    text-decoration: none;
+    color: var(--background-color);
+}
+
 /* Formulários */
 .contact-container {
     display: flex;
@@ -191,7 +232,6 @@ article{
     max-width: 500px;
     flex: 1; /* Ocupa o espaço necessário */
 }
-
 
 /* footer */
 .main_footer {
