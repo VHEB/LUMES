@@ -21,38 +21,44 @@ document.addEventListener("DOMContentLoaded", function () {
             cargo: "Comunicação",
             curso: "Psicologia",
             foto: "../resources/img/equipe/Aninha.jpg",
-            linkedin: "https://www.linkedin.com/in/anna-elisa-moutinho-934555267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
-            instagram: "https://www.instagram.com/ae.moutinho?igsh=MTFpaDBnMGhiNHd3Mg%3D%3D"
+            linkedin: "https://www.linkedin.com/in/anna-elisa-moutinho-934555267",
+            instagram: "https://www.instagram.com/ae.moutinho"
         },
         {
             nome: "Maria Giulia Jacção Alves",
             cargo: "Tesouraria",
             curso: "Biomedicina",
             foto: "../resources/img/equipe/MariaJ.jpeg",
-            linkedin: "https://www.linkedin.com/in/mariagiuliaalves?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
-            instagram: "https://www.instagram.com/maria.jaccao?igsh=MXNtdXYzNXR6Y3Z5NQ%3D%3D&utm_source=qr"
+            linkedin: "https://www.linkedin.com/in/mariagiuliaalves",
+            instagram: "https://www.instagram.com/maria.jaccao"
         },
         {
             nome: "Rafaela Jacção Alves",
             cargo: "Criação e Mídias",
             curso: "Arquitetura e Urbanismo",
             foto: "../resources/img/equipe/UserF.png",
-            instagram: "https://www.instagram.com/rafa.jaccao?igsh=MXBjc2g3MW9vaWJyZA=="
+            instagram: "https://www.instagram.com/rafa.jaccao"
         },
         {
             nome: "Thais Lopes",
             cargo: "Criação e Fotografia",
             curso: "Engenharia Civil",
             foto: "../resources/img/equipe/ThaisLopes.jpeg",
-            linkedin: "https://www.linkedin.com/in/thais-lopes-536510189?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
-            instagram: "https://www.instagram.com/thaisp.ls?igsh=ZGpoaXluOGc5ampl&utm_source=qr"
+            linkedin: "https://www.linkedin.com/in/thais-lopes-536510189",
+            instagram: "https://www.instagram.com/thaisp.ls"
         }
-        
     ];
 
     const container = document.querySelector(".carousel-container");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
 
-    // Criar os cartões dinamicamente
+    if (!container || !prevBtn || !nextBtn) {
+        console.error("Erro: Elementos do carrossel não encontrados.");
+        return;
+    }
+
+    // Criar os cartões dinamicamente dentro do container
     integrantes.forEach(integrante => {
         const card = document.createElement("div");
         card.classList.add("card");
@@ -63,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <p><strong>${integrante.cargo}</strong></p>
             <p>${integrante.curso}</p>
             <div class="social-icons">
-                <a href="${integrante.linkedin}" target="_blank"><i class="icon icon-linkedin"></i></a>
-                <a href="${integrante.instagram}" target="_blank"><i class="icon icon-instagram"></i></a>
+                ${integrante.linkedin ? `<a href="${integrante.linkedin}" target="_blank"><i class="icon icon-linkedin"></i></a>` : ''}
+                ${integrante.instagram ? `<a href="${integrante.instagram}" target="_blank"><i class="icon icon-instagram"></i></a>` : ''}
             </div>
         `;
 
@@ -72,33 +78,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const cards = document.querySelectorAll(".card");
-    const cardWidth = cards[0].offsetWidth + 20; // Pegamos a largura de um card + margem
-    let index = 0; // Começa no primeiro cartão
+    if (cards.length === 0) {
+        console.error("Erro: Nenhum cartão foi criado.");
+        return;
+    }
+
+    let index = 0;
+    const cardWidth = cards[0].offsetWidth + 20; // Largura do cartão + margem
+    const visibleCards = Math.floor(container.parentElement.offsetWidth / cardWidth); // Quantos cabem na tela
+    const maxIndex = cards.length - visibleCards; // Último índice válido
 
     function updateCarousel() {
         container.style.transition = "transform 0.5s ease-in-out";
         container.style.transform = `translateX(-${index * cardWidth}px)`;
-
-        // Desativa o botão de voltar no primeiro item
-        document.getElementById("prevBtn").disabled = index === 0;
-        // Desativa o botão de avançar no último item
-        document.getElementById("nextBtn").disabled = index === integrantes.length - 1;
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index >= maxIndex;
     }
 
-    document.getElementById("prevBtn").addEventListener("click", () => {
+    prevBtn.addEventListener("click", () => {
         if (index > 0) {
             index--;
             updateCarousel();
         }
     });
 
-    document.getElementById("nextBtn").addEventListener("click", () => {
-        if (index < integrantes.length - 1) {
+    nextBtn.addEventListener("click", () => {
+        if (index < maxIndex) {
             index++;
             updateCarousel();
         }
     });
 
-    // Atualiza a posição inicial
+    // Ajusta a largura total do container para garantir que todos os cartões estejam visíveis
+    container.style.width = `${cards.length * cardWidth}px`;
+
     updateCarousel();
 });
