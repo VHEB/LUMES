@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
             nome: "Gabriela Gonçalves",
             cargo: "Líder",
             curso: "Arquitetura e Urbanismo",
-            foto: "../resources/img/equipe/UserF.png",
-            linkedin: "#www.linkedin.com/in/gabriela-gonçalves-030683212 ",
+            foto: "../resources/img/equipe/Gabi.jpg",
+            linkedin: "https://www.linkedin.com/in/gabriela-gonçalves-030683212",
             instagram: "https://www.instagram.com/elagabi.gabriela?igsh=YXJwdDl2bXFuaHFy"
         },
         {
@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             nome: "Rafaela Jacção Alves",
-            cargo: "Tesouraria",
+            cargo: "Criação e Mídias",
             curso: "Arquitetura e Urbanismo",
             foto: "../resources/img/equipe/UserF.png",
             instagram: "https://www.instagram.com/rafa.jaccao?igsh=MXBjc2g3MW9vaWJyZA=="
         },
         {
             nome: "Thais Lopes",
-            cargo: "Tesouraria",
+            cargo: "Criação e Fotografia",
             curso: "Engenharia Civil",
             foto: "../resources/img/equipe/ThaisLopes.jpeg",
             linkedin: "https://www.linkedin.com/in/thais-lopes-536510189?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
