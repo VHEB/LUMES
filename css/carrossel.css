@@ -1,140 +1,128 @@
-/* Container do carrossel */
-
-.carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .container-carrossel {
     position: relative;
-    max-width: 100%;
-    overflow: hidden; /* Mantém os cartões dentro da área visível */
-}
-
-.carousel-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Garante que nada vaze */
-    width: 100%; 
-    max-width: 800px; /* Ajuste para o tamanho do carrossel */
-    margin: 0 auto; /* Centraliza na página */
-}
-
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: max-content; /* Garante que a largura seja limitada */    
-}
-
-
-/* Desativando botões quando não podem ser usados */
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-
-/* Estilizando os cartões */
-.card {
-    flex: 0 0 auto;
-    width: 250px; /* Tamanho fixo dos cartões */
-    margin-right: 10px;
-    background: white;
     padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  
+  .gallery-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    width: 100%;
 }
 
-/* Foto do integrante */
-.card img {
-    width: 100px;
-    height: 100px;
+.gallery-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+  
+  .arrow-left,
+  .arrow-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    font-size: 20px;
+    line-height: 250px;
+    width: 40px;
+    color: #fff;
+    transition: all 600ms ease-in-out;
+    background: linear-gradient(to left, transparent 0%, black 200%);
+    opacity: 0.1;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  
+  .arrow-left:hover,
+  .arrow-right:hover {
+    opacity: 1;
+  }
+  
+  .arrow-right {
+    right: 0;
+    left: auto;
+    text-align: right;
+    background: linear-gradient(to right, transparent 0%, black 200%);
+  }
+  
+  .gallery {
+    display: flex;
+    gap: 15px;
+}
+
+.item {
+    /* Removemos o height fixo para permitir a expansão do conteúdo */
+    width: 250px;
+    /* Permite que o conteúdo defina a altura */
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    transition: opacity 0.6s ease-in-out;
+    opacity: 0.5;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Opcional: centraliza verticalmente se a altura for fixa ou se desejar um efeito */
+    /* justify-content: center; */
+}
+
+.current-item {
+    opacity: 1;
+}
+
+.item img {
     border-radius: 50%;
+    width: 100px;  /* Tamanho fixo para a foto */
+    height: 100px;
     object-fit: cover;
+    display: block;
     margin-bottom: 10px;
 }
 
-/* Nome e cargo */
-.card h3 {
-    font-size: 1.2em;
+/* Nome do integrante */
+.item h3 {
+    font-size: 1.2rem;
     color: var(--base1);
+    margin: 5px 0;
+    text-align: center;
 }
 
-.card p {
-    font-size: 0.9em;
+/* Curso ou cargo secundário */
+.item h4 {
+    font-size: 1rem;
+    color: var(--base3);
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Cargo ou outra informação */
+.item p {
+    font-size: 0.9rem;
     color: var(--font-color);
+    margin: 5px 0;
+    text-align: center;
 }
 
-/* Ícones sociais */
-.card .social-icons {
+/* Social Icons */
+.item .social-icons {
+    display: flex;
+    gap: 10px;
     margin-top: 10px;
 }
 
-.card .social-icons a {
-    text-decoration: none;
+.item .social-icons a {
+    font-size: 1.5rem;
     color: var(--base3);
-    font-size: 1.5em;
-    margin: 0 5px;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
-.card .social-icons a:hover {
+.item .social-icons a:hover {
     color: var(--base4);
-}
-
-button {
-    background: var(--base1);
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 1.5em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-    display: block; /* Garante que apareçam */
-}
-
-/* Ajuste para os botões não desaparecerem */
-#prevBtn, #nextBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    font-size: 1.5em;
-    border-radius: 5px;
-    transition: 0.3s;
-    z-index: 10; /* Garante que os botões sempre fiquem visíveis */
-}
-
-#prevBtn {
-    left: 10px;
-}
-
-#nextBtn {
-    right: 10px;
-}
-
-#prevBtn:hover, #nextBtn:hover {
-    background: var(--base2);
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .carousel {
-        flex-direction: column;
-    }
-
-    .carousel-container {
-        overflow-x: auto;
-        display: flex;
-        scroll-snap-type: x mandatory;
-    }
-
-    .card {
-        scroll-snap-align: center;
-    }
 }
