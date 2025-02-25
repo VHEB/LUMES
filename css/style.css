@@ -377,21 +377,23 @@ article{
 
 /* Estilos do primeiro texto */
 .footer_slogan {
-    font-size: 1.3em;
+    font-size: 1em;
     font-style: italic;
     color: var(--base2);
     word-wrap: break-word;
     line-height: 1.3;
+    text-align: center;
 }
 
 /* Estilos do segundo texto */
 .footer_mission {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-style: italic;
     color: white;
     word-wrap: break-word;
     line-height: 1.3;
     margin-top: 8px;
+    text-align: center;
 }
 
 .footer_logo img {
