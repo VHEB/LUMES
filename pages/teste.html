@@ -1,35 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="../css/carrossel.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/acessibilidade.css">
+    
+    <link rel="stylesheet" type="text/css" href="../css/buttonSocial.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts-icones.css">
+    <link rel="icon" href="../resources/ico/LOGO-LUMES.ico" type="image/x-icon">
     <title>Document</title>
 </head>
 <body>
-    <section class="container-text">
-        <h2>Conheça Nossa Equipe</h2>
-        <div class="container-carrossel">
-            <button class="arrow-left control" aria-label="Previous image">◀</button>
-            <button class="arrow-right control" aria-label="Next Image">▶</button>
-            <div class="gallery-wrapper">
-              <div class="gallery">
-                <!--       <div class="item current-item cyan"></div>
-                <div class="item deeppink"></div>
-                <div class="item turquoise"></div>
-                <div class="item darkblue"></div>
-                <div class="item purple"></div> -->
-                <img src="https://source.unsplash.com/random/250x250/?beach" alt="Beach Image" class="item current-item">
-                <img src="https://source.unsplash.com/random/250x250/?animal" alt="Animal Image" class="item current-item">
-                <img src="https://source.unsplash.com/random/250x250/?street" alt="Street Image" class="item current-item">
-                <img src="https://source.unsplash.com/random/250x250/?zoo" alt="Zoo Image" class="item current-item">
-                <img src="https://source.unsplash.com/random/250x250/?model" alt="Model Image" class="item current-item">
-              </div>
-            </div>
-          </div>
-    </section>
+    <header>
+      
+      <div class="container">
+          <img src="../resources/img/logo_lumes_branco.png" alt="Logo LUMES" class="logo">
+          <nav>
+              <ul class="menu">
+                  <li><a href="../index.html">Início</a></li>
+                  <li><a href="sobre.html">Sobre</a></li>
+                  <li><a href="acao.html">Ações</a></li>
+                  <li><a href="contato.html">Contato</a></li>
+              </ul>
+              <div class="menu-mobile">&#9776;</div>
+          </nav>
+      </div>
+  </header>
+  <div id="acessibilidade-menu" class="acessibilidade-menu">
+        <span>Acessibilidade</span>
+        <div>
+            <button id="diminuir-fonte" aria-label="Diminuir tamanho da fonte">
+                <span class="sr-only">Diminuir tamanho da fonte</span>
+                A-
+            </button>
+            <button id="normalizar-fonte" aria-label="Normalizar tamanho da fonte">
+                <span class="sr-only">Normalizar tamanho da fonte</span>
+                aA
+            </button>
+            <button id="aumentar-fonte" aria-label="Aumentar tamanho da fonte">
+                <span class="sr-only">Aumentar tamanho da fonte</span>
+                A+
+            </button>
+        </div>
+        <button id="contraste" aria-label="Ativar/desativar modo de alto contraste">
+            <img src="../resources/ico/Contraste.svg" alt="Ativar e desativar modo de alto contraste">
+        </button>
+        <button id="vlibras-button" aria-label="Ativar VLibras">
+            <span class="sr-only">Ativar/desativar VLibras</span>
+            <img src="../resources/ico/VLibras.svg" alt="Ativar e desativar VLibras">
+        </button>
+    </div>   
     
-    <script src="../javascript/carrossel.js"></script>
+    
+    <main>
+
+      <h1>Modelo de Página</h1>
+
+    </main>
+
+
+    <footer class="main_footer">
+      <div class="container">
+          <div class="footer_social">
+              <h3>Nos siga nas redes sociais</h3>
+              <nav class="btn_social">
+                  <ul>
+                      <li><a href="https://www.instagram.com/lumesfacens?igsh=MWt3ZjljaGVqeTQ1aQ%3D%3D" target="_blank" title="Instagram"><i class="icon icon-instagram"></i></a></li>
+                      <li><a href="https://www.linkedin.com/company/lumes-facens/" target="_blank" title="LinkedIn"><i class="icon icon-linkedin"></i></a></li>
+                  </ul>
+              </nav>
+          </div>
+          <div class="footer_center">
+              <img src="../resources/img/logo_lumes_branco.png" alt="Logo LUMES">
+              <p class="footer_slogan">"Nosso compromisso é transformar o mundo através da sustentabilidade e do impacto social."</p>
+              <p class="footer_mission">Acreditamos que pequenas ações podem gerar grandes mudanças. Junte-se a nós nessa jornada!</p>
+          </div>
+          <div class="footer_menu">
+              <h3>Links Rápidos</h3>
+              <ul>
+                  <li><a href="../pages/sobre.html">Sobre</a></li>
+                  <li><a href="../pages/acao.html">Ações</a></li>
+                  <li><a href="../pages/inscrição.html">Inscrição</a></li>
+                  <li><a href="../pages/contato.html">Contato</a></li>
+              </ul>
+          </div>
+      </div>
+      <p class="footer_text">&copy; 2025 LUMES - Todos os direitos reservados.</p>
+  </footer>
+    <script src="../javascript/acessibilidade.js"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
+    <script src="../javascript/menu.js"></script>
 </body>
 </html>

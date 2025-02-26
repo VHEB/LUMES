@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição - LUMES</title>
     <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/acessibilidade.css">
     <link rel="stylesheet" type="text/css" href="../css/buttonSocial.css">
     <link rel="stylesheet" type="text/css" href="../css/fonts-icones.css">
     <link rel="icon" href="../resources/ico/LOGO-LUMES.ico" type="image/x-icon">
@@ -26,7 +27,30 @@
         </div>
         
     </header>
-    
+    <div id="acessibilidade-menu" class="acessibilidade-menu">
+      <span>Acessibilidade</span>
+      <div>
+          <button id="diminuir-fonte" aria-label="Diminuir tamanho da fonte">
+              <span class="sr-only">Diminuir tamanho da fonte</span>
+              A-
+          </button>
+          <button id="normalizar-fonte" aria-label="Normalizar tamanho da fonte">
+              <span class="sr-only">Normalizar tamanho da fonte</span>
+              aA
+          </button>
+          <button id="aumentar-fonte" aria-label="Aumentar tamanho da fonte">
+              <span class="sr-only">Aumentar tamanho da fonte</span>
+              A+
+          </button>
+      </div>
+      <button id="contraste" aria-label="Ativar/desativar modo de alto contraste">
+          <img src="../resources/ico/Contraste.svg" alt="Ativar e desativar modo de alto contraste">
+      </button>
+      <button id="vlibras-button" aria-label="Ativar VLibras">
+          <span class="sr-only">Ativar/desativar VLibras</span>
+          <img src="../resources/ico/VLibras.svg" alt="Ativar e desativar VLibras">
+      </button>
+    </div> 
     <main>
         <section id="regulamentos">
           <h2>REGULAMENTOS</h2>
@@ -94,6 +118,18 @@
         </div>
         <p class="footer_text">&copy; 2025 LUMES - Todos os direitos reservados.</p>
     </footer>
+
+    <script src="../javascript/acessibilidade.js"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
     <script src="../javascript/script.js"></script>
     <script src="../javascript/menu.js"></script>

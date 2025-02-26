@@ -134,7 +134,9 @@ main {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     background-color: --var(background-color);
 }
-
+section{
+    margin: 20px;
+}
 #apresentacao{ 
     display: flex;
     justify-content: center;
@@ -192,6 +194,16 @@ article{
 .container-text2 {
     flex: 1; 
     max-width: 60%; 
+}
+
+form textarea {
+    height: 100px;
+    font-family: Arial, sans-serif;
+}
+
+::placeholder {
+    font-family: Arial, sans-serif;
+    font-size: var(--font-size-small);
 }
 
 .form_img {
