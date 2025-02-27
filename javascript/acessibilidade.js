@@ -2,6 +2,8 @@ window.addEventListener('load', () => {
     const aumentarFonte = document.getElementById('aumentar-fonte');
     const diminuirFonte = document.getElementById('diminuir-fonte');
     const normalizarFonte = document.getElementById('normalizar-fonte');
+    const contraste = document.getElementById('contraste');
+    const vlibrasButton = document.getElementById('vlibras-button');
     let fontSize = 1; // Fator multiplicador
 
     function atualizarFonte() {
